@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_main_scene">
+
+    <TextView
+        android:id="@+id/dev"
+        android:layout_width="103dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/developer"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ind"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/welc"
+        android:layout_width="240dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="170dp"
+        android:gravity="center"
+        android:text="@string/welcome_note"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/des_dev"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appName"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <TextView
+        android:id="@+id/des_dev"
+        android:layout_width="148dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="212dp"
+        android:gravity="center"
+        android:text="@string/design_dev"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welc" />
+
+    <TextView
+        android:id="@+id/ind"
+        android:layout_width="88dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="@string/ind"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/des_dev" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="163dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="148dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
