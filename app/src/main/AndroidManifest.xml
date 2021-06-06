@@ -11,6 +11,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.TasksUtil">
         <activity
             android:name=".ui.login.LoginActivity"
@@ -29,9 +31,9 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="sarbesh.pythonanywhere.com"
-                    android:pathPrefix="/accounts/api/token/"
-                    android:scheme="https" />
+                    android:host="@string/host"
+                    android:pathPrefix="@string/login_endpoint"
+                    android:scheme="@string/schema" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -40,9 +42,9 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="sarbesh.pythonanywhere.com"
-                    android:pathPattern="/accounts/api/token/refresh/"
-                    android:scheme="https" />
+                    android:host="@string/host"
+                    android:pathPattern="@string/refresh_endpoint"
+                    android:scheme="@string/schema" />
             </intent-filter>
         </activity>
 

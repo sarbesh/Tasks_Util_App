@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="host">sarbesh.pythonanywhere.com</string>
+    <string name="login_endpoint">/accounts/api/token/</string>
+    <string name="refresh_endpoint">/accounts/api/token/refresh/</string>
+    <string name="schema">https</string>
+</resources>

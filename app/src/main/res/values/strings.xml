@@ -3,7 +3,7 @@
     <!-- Strings related to welcome -->
     <string name="welcome_note">Hello! welcome</string>
     <string name="developer">by Sarbesh Sarkar</string>
-    <string name="design_dev">Designed and developed in</string>
+    <string name="design_dev">designed and developed in</string>
     <string name="ind">India</string>
 
     <!-- Strings related to login -->
@@ -18,4 +18,5 @@
     <string name="asset_statements" translatable="false">[{ \"include\": \"https://sarbesh.pythonanywhere.com/static/.well-known/assetlinks.json\" }]</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
+    <string name="attempts">Number of attempts remaining: {}</string>
 </resources>
