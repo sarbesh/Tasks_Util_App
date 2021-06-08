@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
@@ -18,7 +17,7 @@ public class RetrofitInstance {
 
         if (null == retrofit) {
             HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
 
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
                     .addInterceptor(httpLoggingInterceptor)
@@ -30,10 +29,10 @@ public class RetrofitInstance {
 
             retrofit = new Retrofit.Builder()
                     .baseUrl(url)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .client(okHttpClient)
-                    .build();
+                    .addConverterFactory(GsonConverterFactory.create()).build();
+//                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//                    .client(okHttpClient)
+//                    .build();
         }
         return retrofit;
     }
