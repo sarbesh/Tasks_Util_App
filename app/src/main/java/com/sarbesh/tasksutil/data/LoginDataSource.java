@@ -53,19 +53,6 @@ public class LoginDataSource {
                     countDownLatch.countDown();
                 }
             });
-//            Disposable disposable = loginResponseCall
-//                    .subscribeOn(Schedulers.io())
-//                    .observeOn(AndroidSchedulers.mainThread())
-//                    .subscribe((result) -> {
-//                Log.d("#Login", "Result: " + result);
-//                if (result != null) {
-//                    this.loggedInUser = new LoggedInUser(result);
-//                }
-//                countDownLatch.countDown();
-//            }, (Throwable e) -> {
-//                Log.e("#Login", "Exception at subscription");
-//                countDownLatch.countDown();
-//            });
             try {
                 countDownLatch.await();
             } catch (InterruptedException e) {
@@ -78,6 +65,17 @@ public class LoginDataSource {
 //
 //            Map<String, AsyncResponse> responseMap = asyncService.processAsyncRequest(requestMap);
 //            AsyncResponse loginResponse = responseMap.get("login");
+//            try{
+//                Response<LoginResponse> result = loginResponseCall.execute();
+//                if (result.isSuccessful()){
+//                    Log.i("#Login","Login Success"+result);
+//                    loggedInUser = new LoggedInUser(result.body());
+//                } else {
+//                    Log.e("#Login","Error logging in "+result.body().getDetail());
+//                }
+//            } catch (Exception ex){
+//                Log.e("#Login","Exception ex: "+ex.getMessage());
+//            }
 
             if (this.loggedInUser != null) {
                 Log.d("#LoginDataSource: ", "success loggedInUser is not null: " + loggedInUser.getDisplayName());

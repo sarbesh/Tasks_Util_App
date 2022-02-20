@@ -17,7 +17,7 @@ public class RetrofitInstance {
 
         if (null == retrofit) {
             HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
                     .addInterceptor(httpLoggingInterceptor)
@@ -29,10 +29,10 @@ public class RetrofitInstance {
 
             retrofit = new Retrofit.Builder()
                     .baseUrl(url)
-                    .addConverterFactory(GsonConverterFactory.create()).build();
+                    .addConverterFactory(GsonConverterFactory.create())
 //                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-//                    .client(okHttpClient)
-//                    .build();
+                    .client(okHttpClient)
+                    .build();
         }
         return retrofit;
     }
